@@ -4,5 +4,5 @@ import Main from 'main'
 
 ReactDOM.render(
   <Main />,
-  document.getElementById('hogehoge')
+  document.getElementById('app')
 );
