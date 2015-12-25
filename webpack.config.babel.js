@@ -14,10 +14,11 @@ file.walkSync(__dirname + "/html", (dirPath, dirs, files) => {
 });
 
 var jadeFiles = htmlSources.filter((f) => /\.jade$/.test(f)).map((f) => "./" + f);
+
 var jadeEntries = [...jadeFiles];
 var jadePlugins = jadeFiles
   .map((f) => new HtmlWebpackPlugin({
-    filename: path.join(path.dirname(f), path.basename(f, ".jade") + ".html"),
+    filename: path.relative(path.normalize('./html'), path.join(path.dirname(f), path.basename(f, ".jade") + ".html")),
     templateContent: jade.compileFile(f)(),
   }));
 
