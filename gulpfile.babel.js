@@ -10,11 +10,13 @@ gulp.task('webpack', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch([
+  watch([
     'html/**/*',
     'javascripts/**/*',
     'stylesheets/**/*',
-  ], ['webpack'])
+  ], () => {
+    gulp.start(['webpack']);
+  });
 });
 
 
@@ -32,5 +34,7 @@ gulp.task('browser-reload', () => {
 });
 
 gulp.task('default', ['watch', 'browser'], () => {
-  gulp.watch('public/**/*', ['browser-reload'])
+  watch('public/**/*', () => {
+    gulp.start(['browser-reload']);
+  });
 });

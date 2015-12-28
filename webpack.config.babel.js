@@ -36,11 +36,12 @@ module.exports = {
 
   resolve : {
     root: [
+      path.join(__dirname, "html"),
       path.join(__dirname, "javascripts"),
       path.join(__dirname, "node_modules"),
       path.join(__dirname, "stylesheets"),
     ],
-    extensions: ["", ".js", ".es6", ".jsx", "scss", ],
+    extensions: ["", ".js", ".es6", ".jsx", "scss", "jade", ],
   },
 
   module: {
