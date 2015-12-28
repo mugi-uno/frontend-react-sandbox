@@ -30,8 +30,8 @@ module.exports = {
   ],
 
   output: {
-    path : __dirname + "/dist",
-    filename : "app.js"
+    path : __dirname + "/public",
+    filename : "dist/app.js"
   },
 
   resolve : {
@@ -58,7 +58,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css', {
+    new ExtractTextPlugin('dist/style.css', {
       allChunks : true
     }),
     ...jadePlugins
